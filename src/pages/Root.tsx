@@ -4,12 +4,15 @@ import { FiTriangle, FiSearch } from 'react-icons/fi'
 import httpClient from '../utils/httpClient'
 import useQuery from '../hooks/query';
 
+import { T_movieData } from '../types/movieApi'
+import { MovieCard } from '../components/MovieCard';
 import '../css/root.css'
+
 
 export function Root () {
 
   const [movieData, setMovieData] = useState({
-    movies: [] as Record<string, any>[],
+    movies: [] as T_movieData[],
     isLoading: true
   })
 
@@ -20,9 +23,8 @@ export function Root () {
   useEffect(() => {
     httpClient.getMovies(endpoint)
       .then((data: any) => {
-        const results: Record<string, any>[] = data.results
+        const results: T_movieData[] = data.results
         setMovieData({ isLoading: false, movies: results })
-        // console.log('reuslt', results[0]);
       })
       .catch((err: any) => { console.error('Error:', err); throw err })
   }, [searchQuery])
@@ -30,7 +32,7 @@ export function Root () {
   return (
     <div className="root-container">
       {/* Main view */}
-      <div className="w-screen h-screen flex justify-center items-center">
+      <div className="main-view w-screen h-screen flex justify-center items-center">
         <div className="bg-black bg-opacity-30 flex flex-row justify-center items-center h-48 w-screen">
           <div>
             <span className="text-blue-400 text-9xl">
@@ -42,8 +44,17 @@ export function Root () {
           </div>
         </div>
       </div>
-      <div className='py-24'>
-        {/* Content... */}
+      <div className='bg-gray-600 bg-opacity-90 flex flex-col'>
+        <div className=''>
+          <span>filters</span>
+        </div>
+        <div className='movies-grid'>
+          {
+            movieData.isLoading
+            ? <></>
+            : movieData.movies.map((movie: T_movieData) => <MovieCard movie={movie} />)
+          }
+        </div>
       </div>
     </div>
   )

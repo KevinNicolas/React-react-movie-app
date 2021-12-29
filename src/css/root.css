@@ -10,3 +10,20 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
+.main-view * {
+  overflow: hidden;
+}
+
+.movies-grid {
+  @apply w-full;
+  @apply grid;
+  @apply gap-y-8;
+  @apply gap-x-6;
+  @apply justify-center;
+  @apply items-center;
+  @apply px-4;
+  @apply py-8;
+
+  grid-template-columns: repeat(auto-fit, 18rem);
+}
