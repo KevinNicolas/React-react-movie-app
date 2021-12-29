@@ -1,7 +1,31 @@
-import '../css/root.css'
+import { useState, useEffect } from 'react';
 import { FiTriangle, FiSearch } from 'react-icons/fi'
 
+import httpClient from '../utils/httpClient'
+import useQuery from '../hooks/query';
+
+import '../css/root.css'
+
 export function Root () {
+
+  const [movieData, setMovieData] = useState({
+    movies: [] as Record<string, any>[],
+    isLoading: true
+  })
+
+  const searchQuery: string | null = useQuery().get('search')
+  const endpoint = searchQuery ? `/search/movie?query=${searchQuery}` : '/discover/movie'
+    
+  
+  useEffect(() => {
+    httpClient.getMovies(endpoint)
+      .then((data: any) => {
+        const results: Record<string, any>[] = data.results
+        setMovieData({ isLoading: false, movies: results })
+        // console.log('reuslt', results[0]);
+      })
+      .catch((err: any) => { console.error('Error:', err); throw err })
+  }, [searchQuery])
 
   return (
     <div className="root-container">
@@ -17,6 +41,9 @@ export function Root () {
             <span className="text-gray-200 text-7xl font-medium">React-movies</span>
           </div>
         </div>
+      </div>
+      <div className='py-24'>
+        {/* Content... */}
       </div>
     </div>
   )

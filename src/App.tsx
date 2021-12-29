@@ -1,10 +1,11 @@
-import React from 'react';
 import {
   BrowserRouter,
   Routes,
   Route
 } from 'react-router-dom'
+
 import { Root } from './pages/Root';
+import { Movies } from './pages/Movies'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Root />} />
-          <Route path="/other" element={<span>In other page</span>} />
+          <Route path="/movies" element={<Movies />} />
         </Routes>
       </BrowserRouter>
     </div>

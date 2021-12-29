@@ -1,6 +1,11 @@
+* {
+  overflow-x: hidden;
+}
+
 .root-container {
-  @apply h-screen;
-  @apply w-screen;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-y: auto;
   background: url('../assets/img/ticket.jpg');
   background-attachment: fixed;
   background-size: cover;
