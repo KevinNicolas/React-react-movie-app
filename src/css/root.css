@@ -1,0 +1,7 @@
+.root-container {
+  @apply h-screen;
+  @apply w-screen;
+  background: url('../assets/img/ticket.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
