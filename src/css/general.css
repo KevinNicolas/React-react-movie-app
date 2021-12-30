@@ -1,0 +1,44 @@
+.full {
+  @apply w-full;
+  @apply h-full;
+}
+
+.center {
+  @apply justify-center;
+  @apply items-center;
+}
+
+.transition-default {
+  @apply transition-all;
+  @apply duration-300;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-400;
+  @apply transition;
+  @apply duration-300;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-500;
+}
+
+.spin {
+  animation: spin linear 3s infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

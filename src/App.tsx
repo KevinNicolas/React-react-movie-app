@@ -6,6 +6,7 @@ import {
 
 import { Root } from './pages/Root';
 import { Movies } from './pages/Movies'
+import './css/general.css'
 
 function App() {
   return (

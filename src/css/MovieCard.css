@@ -1,3 +1,16 @@
+.Movie-card-link {
+  @apply transition-all;
+  @apply overflow-visible;
+}
+
+.Movie-card-link:hover {
+  transform: scale(1.05);
+}
+
+.Movie-card-link:active {
+  transform: scale(1);
+}
+
 .Movie-card {
   --card-width: 18rem;
   --card-height: 31rem;
@@ -5,7 +18,6 @@
   @apply bg-blue-400;
   @apply grid;
   @apply rounded-md;
-  @apply transition-all;
   @apply duration-300;
   @apply cursor-pointer;
   width: var(--card-width);
@@ -19,12 +31,7 @@
 }
 
 .Movie-card:hover {
-  transform: scale(1.05);
   @apply bg-blue-300;
-}
-
-.Movie-card:active {
-  transform: scale(1);
 }
 
 .image-container {
