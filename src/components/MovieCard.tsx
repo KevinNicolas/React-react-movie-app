@@ -14,8 +14,9 @@ export function MovieCard (props: props) {
     : noImagesUrl
 
   return (
-    <Link to={`/${props.movie.id}`} className="Movie-card-link">
+    <Link to={`/${props.movie.id}`} className="Movie-card-link fade-in">
       <div className="Movie-card">
+        {/* IMAGE */}
         <div className="image-container w-full h-full" style={{ background: `url("${imageURL}")`}}>
           <div 
             className={`
@@ -32,8 +33,21 @@ export function MovieCard (props: props) {
             <span>{ props.movie.vote_average }</span>
           </div>
         </div>
-        <div className="flex justify-center items-center w-full h-full px-2 text-center">
-          <span>{ props.movie.original_title }</span>
+        {/* TITLE */}
+        <div 
+          className="
+            flex 
+            justify-center items-center text-center 
+            w-full h-full
+            px-2
+            overflow-hidden overflow-ellipsis
+          "
+        >
+          <span 
+            className={`overflow-hidden overflow-ellipsis w-full ${ props.movie.original_title.length > 40 ? 'h-full' : '' }`}
+          >
+            { props.movie.original_title }
+          </span>
         </div>
       </div>
     </Link>

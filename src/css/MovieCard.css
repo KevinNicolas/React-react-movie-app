@@ -1,5 +1,6 @@
 .Movie-card-link {
   @apply transition-all;
+  @apply duration-300;
   @apply overflow-visible;
 }
 

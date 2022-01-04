@@ -39,6 +39,23 @@
   animation: spin linear 3s infinite;
 }
 
+.fade-in {
+  animation: fadeIn 1s ease-in-out; 
+}
+
+.spin-fade-in {
+  animation: spin 3s linear infinite, fadeIn 1s ease-in;
+}
+
+.animation-delay-1 {
+  animation-delay: 1s;
+}
+
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
