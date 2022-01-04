@@ -1,10 +1,9 @@
-import { T_movieData } from "../types/movieApi"
 import noImagesUrl from "../utils/noImagesUrl"
 import { Link } from "react-router-dom"
 import '../css/MovieCard.css'
 
 type props = {
-  movie: T_movieData
+  movie: movieData
 }
 
 export function MovieCard (props: props) {

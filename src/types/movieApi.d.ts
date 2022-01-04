@@ -1,4 +1,4 @@
-export type T_movieData = {
+interface movieData {
   id: number,
   adult: boolean,
   backdrop_path: string,
