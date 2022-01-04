@@ -1,0 +1,3 @@
+interface searchBarRefs {
+  setSearchIsLoading: Function
+}
