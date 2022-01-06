@@ -6,7 +6,6 @@ import debounce from 'lodash.debounce'
 
 import useQuery from '../hooks/query'
 
-import '../css/root.css'
 import '../css/general.css'
 
 

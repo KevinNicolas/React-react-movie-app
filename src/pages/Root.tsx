@@ -28,7 +28,6 @@ export function Root () {
         const results: movieData[] = data.results
         setMovieData({ isLoading: false, movies: results })
         if (searchBarRef.current) { searchBarRef.current.setSearchIsLoading(false) }
-        // setSearchIsLoading(false)
       })
       .catch((err: any) => { 
         console.error('Error:', err);
@@ -40,7 +39,6 @@ export function Root () {
   
   return (
     <div className="root-container">
-      {/* Main view */}
       <div className="main-view w-screen h-screen flex justify-center items-center">
         <div className="bg-black bg-opacity-30 flex flex-row justify-center items-center h-48 w-screen">
           <div>
