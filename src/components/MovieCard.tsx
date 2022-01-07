@@ -13,7 +13,7 @@ export function MovieCard (props: props) {
     : noImagesUrl
 
   return (
-    <Link to={`/${props.movie.id}`} className="Movie-card-link fade-in">
+    <Link to={`/movie/${props.movie.id}`} className="Movie-card-link fade-in">
       <div className="Movie-card">
         {/* IMAGE */}
         <div className="image-container w-full h-full" style={{ background: `url("${imageURL}")`}}>
