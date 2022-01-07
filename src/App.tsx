@@ -1,22 +1,10 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from 'react-router-dom'
-
-import { Root } from './pages/Root';
-import { Movies } from './pages/Movies'
+import { Routes } from './routes';
 import './css/general.css'
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Root />} />
-          <Route path="/movies" element={<Movies />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes />
     </div>
   );
 }
