@@ -24,7 +24,6 @@
   @apply bg-gray-400;
   @apply flex;
   @apply flex-row;
-  @apply justify-between;
   @apply items-center;
   @apply bg-opacity-90;
   @apply overflow-hidden;

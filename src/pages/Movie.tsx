@@ -88,7 +88,7 @@ function ShowMovieInfo (props: { movie: detailedMovieData }) {
           </a>
         </div>
       </div>
-      <div className='footer'>
+      <div className={`footer ${movie.production_companies.length > 1 ? 'justify-between' : 'justify-center'}`}>
         { movie.production_companies.map((company: company) => {
           return (<img src={companyImageURL(company.logo_path)} alt={company.name} />)
         }) }
