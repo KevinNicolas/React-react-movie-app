@@ -7,6 +7,10 @@
   grid-template-rows: var(--header-size) calc(100vh - var(--header-size));
 }
 
+.movie-detail-container * {
+  @apply overflow-hidden;
+}
+
 .react-movie-button:active {
   transform: scale(.95);
 }
@@ -34,4 +38,30 @@
 .footer img {
   max-height: calc(var(--footer-size) - var(--footer-padding));
   width: auto;
+}
+
+.overview {
+  @apply overflow-y-auto
+}
+
+@media screen and (max-width: 768px ) {
+  .footer {
+    @apply justify-center;
+    @apply gap-4;
+  }
+  .footer img:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px ) {
+  .footer img:nth-child(n+3) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px ) {
+  .footer img:nth-child(n+2) {
+    display: none;
+  }
 }
