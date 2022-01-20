@@ -1,5 +1,7 @@
 .movie-detail-container {
   --header-size: 10vh;
+  --footer-size: 12vh;
+  --footer-padding: 2rem;
 
   @apply grid;
   grid-template-rows: var(--header-size) calc(100vh - var(--header-size));
@@ -14,4 +16,23 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: grid;
+  grid-template-rows: calc(100% - var(--footer-size)) var(--footer-size);
+}
+
+.footer {
+  @apply bg-gray-400;
+  @apply flex;
+  @apply flex-row;
+  @apply justify-between;
+  @apply items-center;
+  @apply bg-opacity-90;
+  @apply overflow-hidden;
+  max-height: var(--footer-size);
+  padding: var(--footer-padding)
+}
+
+.footer img {
+  max-height: calc(var(--footer-size) - var(--footer-padding));
+  width: auto;
 }

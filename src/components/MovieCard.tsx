@@ -1,5 +1,6 @@
 import noImagesUrl from "../utils/noImagesUrl"
 import { Link } from "react-router-dom"
+import getClassColor from "../hooks/voteAvrgColor"
 import '../css/MovieCard.css'
 
 type props = {
@@ -20,13 +21,7 @@ export function MovieCard (props: props) {
           <div 
             className={`
               bubble
-              ${
-                props.movie.vote_average < 6
-                ? 'bg-red-500'
-                : props.movie.vote_average <= 8
-                  ? 'bg-yellow-500'
-                  : 'bg-green-500'
-              }
+              ${getClassColor(props.movie.vote_average)}
             `}
           >
             <span>{ props.movie.vote_average }</span>

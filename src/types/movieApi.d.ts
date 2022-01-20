@@ -1,3 +1,10 @@
+interface company {
+  id: number,
+  logo_path: string,
+  name: string,
+  origin_country: string
+}
+
 interface movieData {
   id: number,
   adult: boolean,
@@ -20,12 +27,7 @@ interface detailedMovieData extends movieData {
   genres: Array<{ id: number, name: string }>
   homepage: string,
   imdb_id: string,
-  production_companies: Array<{
-    id: number,
-    logo_path: string,
-    name: string,
-    origin_conutry: string
-  }>,
+  production_companies: Array<company>,
   production_countries: Array<{ iso_3166_1: string, name: string }>,
   revenue: number,
   runtime: number,
