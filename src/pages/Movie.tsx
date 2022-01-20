@@ -61,7 +61,7 @@ function ShowMovieInfo (props: { movie: detailedMovieData }) {
             </span>
           <div
             className={`
-            text-white rounded-full px-9 py-9 text-4xl hidden lg:flex flex-col
+            text-white rounded-full px-9 py-9 text-4xl hidden lg:flex flex-col justify-center items-center
               ${getClassColor(movie.vote_average)}
             `}
           >
